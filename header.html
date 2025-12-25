@@ -1,0 +1,129 @@
+<!-- ==================== TOP BAR START ==================== -->
+<div class="top-bar">
+    <div class="container flex-between">
+        <!-- Welcome Text with Shimmer Effect -->
+        <span class="welcome-text">Welcome to RD Trading</span>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="#" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" class="social-btn insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/94740611225" target="_blank" class="social-btn wa"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+</div>
+<!-- ==================== TOP BAR END ==================== -->
+
+
+<!-- ==================== MOBILE MENU START ==================== -->
+<!-- Dark Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+
+<!-- Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+    <!-- Menu Header -->
+    <div class="menu-tabs">
+        <button class="tab-btn active" style="cursor: default; border-bottom: 2px solid var(--primary-blue);">
+            MENU
+        </button>
+    </div>
+
+    <!-- Mobile Links -->
+    <div id="menu-content" class="tab-content active" style="display: block;">
+        <ul class="mobile-links">
+            <li><a href="index.html" data-mobile-page="index.html">Home</a></li>
+            <li><a href="shop.html" data-mobile-page="shop.html">Shop</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="contact.html" data-mobile-page="contact.html">Contact</a></li>
+            
+            <li class="separator"></li>
+            
+            <li>
+                <a href="#" onclick="closeMobileMenu(); toggleFavorites(); return false;">
+                    <i class="far fa-heart"></i> Wishlist
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- ==================== MOBILE MENU END ==================== -->
+
+
+<!-- ==================== MAIN HEADER START ==================== -->
+<header class="main-header sticky">
+    <div class="container header-layout">
+
+        <!-- 1. Mobile Menu Trigger -->
+        <button class="mobile-menu-btn" onclick="openMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- 2. Logo -->
+        <div class="logo">
+            <h1><span class="green-text">RD</span> Trading</h1>
+            <span class="tagline">Best Teaching Equipment supplier in Sri Lanka</span>
+        </div>
+
+        <!-- 3. Desktop Navigation -->
+        <nav class="navbar">
+            <a href="index.html" data-page="index.html">HOME</a>
+            <a href="#about">ABOUT US</a>
+            <a href="shop.html" data-page="shop.html">OUR PRODUCTS</a>
+            <a href="contact.html" data-page="contact.html">CONTACT US</a>
+        </nav>
+
+        <!-- 4. Right Icons -->
+        <div class="header-actions">
+            <!-- Heart Icon -->
+            <div class="icon-wrapper" onclick="toggleFavorites()">
+                <i class="far fa-heart action-icon"></i>
+                <span class="badge" id="fav-count">0</span>
+            </div>
+            <!-- Cart Icon (Optional) -->
+            <div class="icon-wrapper">
+                <i class="fas fa-shopping-cart action-icon"></i>
+                <span class="badge">0</span>
+            </div>
+        </div>
+
+    </div>
+</header>
+<!-- ==================== MAIN HEADER END ==================== -->
+
+<!-- ==================== WISHLIST MODAL START ==================== -->
+<!-- Hidden by default, toggled by JS -->
+<div id="favorites-modal" class="modal">
+    <div class="modal-overlay" onclick="toggleFavorites()"></div> <!-- Closes when clicking outside -->
+    
+    <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+            <h3><i class="fas fa-heart" style="color: var(--primary-blue);"></i> My Wishlist</h3>
+            <button class="close-btn" onclick="toggleFavorites()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Scrollable List of Items -->
+        <div id="favorites-list" class="favorites-grid">
+            <!-- JS will inject items here, or show this empty message -->
+            <div class="empty-state">
+                <i class="far fa-heart"></i>
+                <p>No favorite items yet.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==================== WISHLIST MODAL END ==================== -->
+<script>
+    // Highlight current page in desktop nav
+    document.addEventListener("DOMContentLoaded", function() {
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.navbar a[data-page]');
+        navLinks.forEach(link => {
+            if (link.getAttribute('data-page') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>

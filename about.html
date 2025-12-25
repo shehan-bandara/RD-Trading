@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | RD Trading</title>
+    
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Page Specific Styles (You can move this to style.css) -->
+    <style>
+        :root {
+            --primary-green: #198754;  /* Fresh Green */
+            --dark-green: #0f5132;     /* Deep Professional Green */
+            --light-green: #e8f5e9;    /* Very Light Green Background */
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        /* --- Hero Section --- */
+        .green-hero {
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Angled bottom edge */
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Intro Section --- */
+        .intro-section {
+            padding: 80px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .green-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            color: var(--dark-green);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .text-lead {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: var(--light-green);
+            border-left: 5px solid var(--primary-green);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        /* --- Values Section --- */
+        .values-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-green);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-green);
+            color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px auto;
+        }
+
+        .value-title {
+            color: var(--dark-green);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- CTA Bar --- */
+        .green-cta {
+            background-color: var(--dark-green);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--dark-green);
+            padding: 12px 35px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn-white:hover {
+            background-color: var(--light-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .intro-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 2.5rem; }
+            .green-hero { clip-path: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <div id="header-container"></div>
+
+    <!-- ==================== GREEN HERO ==================== -->
+    <header class="green-hero">
+        <div class="container">
+            <h1 class="hero-title">About RD Trading</h1>
+            <p class="hero-subtitle">Building trust with quality products since 2005.</p>
+        </div>
+    </header>
+
+    <!-- ==================== WHO WE ARE ==================== -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <!-- Left: Text -->
+                <div class="intro-text">
+                    <div class="green-line"></div>
+                    <h2 class="section-heading">Excellence in Every Detail</h2>
+                    <p class="text-lead">
+                        RD Trading is Sri Lanka's premier supplier of educational and office equipment. 
+                        We believe that a well-equipped environment is the foundation of success.
+                    </p>
+                    <p class="text-lead">
+                        From custom-built whiteboards to ergonomic office furniture, we combine 
+                        <strong>modern design</strong> with <strong>unbeatable durability</strong>.
+                    </p>
+                    
+                    <div class="stat-box">
+                        <strong style="font-size: 1.2rem; color: var(--dark-green);">20+ Years Experience</strong>
+                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Serving schools, universities, and businesses island-wide.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Clean Visual -->
+                <div class="intro-image">
+                    <!-- Placeholder for a nice clean office or product shot -->
+                    <img src="images/image.png" 
+                         alt="Office Environment" 
+                         style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CORE VALUES ==================== -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-heading">Why Choose Us?</h2>
+            <p style="color: #666; max-width: 600px; margin: 0 auto;">Our reputation is built on three simple principles.</p>
+            
+            <div class="values-grid">
+                <!-- Card 1 -->
+                <div class="value-card">
+                    <div class="icon-box"><i class="fas fa-check-circle"></i></div>
+                    <h3 class="value-title">Quality First</h3>
+                    <p>We use premium materials to ensure our products withstand the test of time.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="value-card">
+                    <div class="icon-box"><i class="fas fa-shipping-fast"></i></div>
+                    <h3 class="value-title">Fast Delivery</h3>
+                    <p>Reliable island-wide delivery network to get your order to you safely.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="value-card">
+                    <div class="icon-box"><i class="fas fa-users"></i></div>
+                    <h3 class="value-title">Customer Focus</h3>
+                    <p>We listen to your needs and provide custom solutions for your space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="green-cta">
+        <div class="container">
+            <h2 style="margin-bottom: 10px;">Ready to Upgrade?</h2>
+            <p style="opacity: 0.9; margin-bottom: 25px;">Get the best quote for your school or office today.</p>
+            <a href="contact.html" class="btn-white">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

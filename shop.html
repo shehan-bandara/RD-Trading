@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - RD Trading</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <!-- Page Title -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p><a href="index.html">Home</a> / Shop</p>
+        </div>
+    </div>
+
+    <!-- Main Shop Layout -->
+    <div class="container shop-layout">
+
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">CATEGORIES</h3>
+                <ul class="category-list">
+                    <!-- Main Filter: Show All -->
+                    <li class="active" onclick="filterProducts('all')">All Products</li>
+
+                    <!-- Core Categories -->
+                    <li onclick="filterProducts('whiteboard')">White Boards</li>
+                    <li onclick="filterProducts('greenboard')">Green/Chalk Boards</li>
+
+                    <!-- Secondary Categories -->
+                    <li onclick="filterProducts('noticeboard')">Notice & Pin Boards</li>
+                    <li onclick="filterProducts('easel')">Easels & Stands</li>
+
+                    <!-- Games & Accessories -->
+                    <li onclick="filterProducts('chess')">Chess & Dam Boards</li>
+                    <li onclick="filterProducts('carrom')">Carrom Boards</li>
+                    <li onclick="filterProducts('partition')">Partition Boards</li>
+
+                    <!-- Misc -->
+                    <li onclick="filterProducts('other')">Accessories & Others</li>
+                </ul>
+            </div>
+
+            <!-- Price Filter (Kept as is) -->
+            <div class="widget">
+                <h3 class="widget-title">FILTER BY PRICE</h3>
+                <div class="price-range">
+                    <input type="range" id="priceRange" min="0" max="50000" step="500" value="50000"
+                        oninput="filterByPrice(this.value)">
+                    <p>Max Price: Rs <span id="priceValue">50,000</span></p>
+                </div>
+            </div>
+        </aside>
+
+
+        <!-- Product Grid Area -->
+        <main class="shop-content">
+            <div class="shop-header">
+                <p>Showing all <span id="product-count">0</span> results</p>
+                <select id="sortSelect" onchange="sortProducts(this.value)">
+                    <option value="default">Default Sorting</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                </select>
+            </div>
+
+            <!-- Products get injected here by JS -->
+            <div id="shop-grid" class="product-grid three-col">
+                <!-- Loading... -->
+            </div>
+        </main>
+
+    </div>
+
+    <div id="footer-container"></div>
+
+    <!-- WhatsApp & Scroll Top -->
+    <a href="https://wa.me/94740611225" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
